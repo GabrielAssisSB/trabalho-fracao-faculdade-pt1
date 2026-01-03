@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Matriz de Fração</title>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+  <p>
+  <a href="matemática.html">
+    <button type="button">Voltar para a página inicial</button>
+  </a>
+</p>
+  
+  <header>
+    <h1>Matriz de Fração Estereotipada</h1>
+  </header>
+
+  <main class="layout">
+    <section class="matrix-wrapper">
+      <div class="matrix-container" id="matrixContainer">
+        <img id="matrixImage" src="matriz.png" alt="Matriz não colorida">
+        <div class="overlay" id="overlay" aria-label="Área para posicionar peças"></div>
+      </div>
+
+      <p class="hint">Clique em uma peça na paleta para criar uma copia que pode mover e as copias não podem sair da matriz.</p>
+    </section>
+
+    <aside class="palette">
+      <h2>Paleta de partes referentes a matriz</h2>
+      <div class="parts-list" id="partsList">
+        <img class="piece" data-id="p1" src="1.png" alt="Peça 1" draggable="false">
+        <img class="piece" data-id="p2" src="meio.png" alt="Peça 2" draggable="false">
+        <img class="piece" data-id="p3" src="terco.png" alt="Peça 3" draggable="false">
+        <img class="piece" data-id="p4" src="quarto.png" alt="Peça 4" draggable="false">
+        <img class="piece" data-id="p5" src="sexto.png" alt="Peça 5" draggable="false">
+        <img class="piece" data-id="p6" src="12.png" alt="Peça 6" draggable="false">
+      </div>
+
+      <div class="controls">
+        <button id="resetBtn">Resetar peças</button>
+        <p class="note">1 hora só nas peças pro tamanho ficar certo</p>
+      </div>
+    </aside>
+  </main>
+
+  <script src="style/objeto.js"></script>
+</body>
+</html>
