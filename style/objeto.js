@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const overlay = document.getElementById('overlay');
   const matrixImage = document.getElementById('matrixImage');
   const resetBtn = document.getElementById('resetBtn');
+  const removeOneBtn = document.getElementById('removeOneBtn');
+  const rowLabels = document.getElementById('rowLabels');
 
   const WIDTH_FRACTIONS = {
     "1.png": 1,
@@ -105,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function onPointerUp(e) {
       dragging = false;
-      try { el.releasePointerCapture(e.pointerId); } catch (_) { }
+      try { el.releasePointerCapture(e.pointerId); } catch (_) {}
       window.removeEventListener('pointermove', onPointerMove);
       window.removeEventListener('pointerup', onPointerUp);
     }
@@ -120,7 +122,26 @@ document.addEventListener('DOMContentLoaded', () => {
       createPlacedPiece(target, 10, count * 10);
     }
   });
+
   resetBtn.addEventListener('click', () => {
     overlay.querySelectorAll('.placed').forEach(el => el.remove());
   });
+
+  removeOneBtn.addEventListener('click', () => {
+    const pieces = overlay.querySelectorAll('.placed');
+    if (pieces.length > 0) {
+      pieces[pieces.length - 1].remove();
+    }
+  });
+
+  function createRowLabels(){
+    rowLabels.innerHTML = '';
+    for(let i = 0; i < 6; i++){
+      const label = document.createElement('span');
+      label.textContent = 'F' + (i + 1);
+      rowLabels.appendChild(label);
+    }
+  }
+
+  createRowLabels();
 });
